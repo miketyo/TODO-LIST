@@ -1,47 +1,16 @@
+/* Include the padding and border in an element's total width and height */
 * {
     box-sizing: border-box;
   }
   
+  /* Remove margins and padding from the list */
   ul {
     margin: 0;
     padding: 0;
   }
-
-/* header */
-.header {
-    background-color: #b675e4;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-  }
-
-/* input */
-input {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
-  }
-
-  /* "Add" button */
-.addBtn {
-    padding: 10px;
-    width: 25%;
-    background: #ffffff;
-    color: rgb(14, 13, 13);
-    float: left;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
-  }
-
-  /* Style list items */
-ul li {
+  
+  /* Style the list items */
+  ul li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -49,20 +18,27 @@ ul li {
     font-size: 18px;
     transition: 0.2s;
   
-    /* unselectable list items */
+    /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
   }
-
-  /*List hover background-color */
-ul li:hover {
+  
+  /* Darker background-color on hover */
+  ul li:hover {
     background: rgb(255, 255, 255);
   }
   
-/* Add a "tick" mark when clicked on */
-ul li.checked::before {
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: rgb(197, 144, 229);
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
     content: '';
     position: absolute;
     border-color: rgb(239, 235, 235);
@@ -74,17 +50,9 @@ ul li.checked::before {
     height: 15px;
     width: 7px;
   }
-
-
-/* Clicked item add a background color and strike out text */
-ul li.checked {
-  background: rgb(197, 144, 229);
-  color: #fff;
-  text-decoration: line-through;
-}
-
-/* close button */
-.close {
+  
+  /* Style the close button */
+  .close {
     position: absolute;
     right: 0;
     top: 0;
@@ -94,4 +62,48 @@ ul li.checked {
   .close:hover {
     background-color: #f70ed4;
     color: white;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #b675e4;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #ffffff;
+    color: rgb(14, 13, 13);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: rgb(255, 7, 201);
   }
